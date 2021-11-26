@@ -1,0 +1,70 @@
+.hero {
+  background-color: #c4c4c4;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  background-image: $hero-gradient,
+    url("../images/background/background-mobile.jpg");
+  @media screen and (max-width: 1199px) {
+    padding: 118px 0;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 1600px;
+    height: 600px;
+    padding: 200px 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.hero {
+  @media (min-device-pixel-ratio: 2) and (max-width: 767px),
+    (min-resolution: 192dpi) and (max-width: 767px),
+    (min-resolution: 2dppx) and (max-width: 767px) {
+    background-image: $hero-gradient,
+      url("../images/background/background-mobile@2x.jpg");
+  }
+  @media screen and (min-width: 768px) {
+    background-image: $hero-gradient,
+      url("../images/background/background-tablet.jpg");
+  }
+  @media (min-device-pixel-ratio: 2) and (min-width: 768px),
+    (min-resolution: 192dpi) and (min-width: 768px),
+    (min-resolution: 2dppx) and (min-width: 768px) {
+    background-image: $hero-gradient,
+      url("../images/background/background-tablet@2x.jpg");
+  }
+  @media screen and (min-width: 1200px) {
+    background-image: $hero-gradient,
+      url("../images/background/background-desktop.jpg");
+  }
+  @media (min-device-pixel-ratio: 2) and (min-width: 1200px),
+    (min-resolution: 192dpi) and (min-width: 1200px),
+    (min-resolution: 2dppx) and (min-width: 1200px) {
+    background-image: $hero-gradient,
+      url("../images/background/background-desktop@2x.jpg");
+  }
+}
+
+.hero__heading {
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.62;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  @media screen and (min-width: 410px) and (max-width: 1199px) {
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 44px;
+    line-height: 1.36;
+    margin: 0 auto;
+    text-align: center;
+    color: $color-white;
+    width: 696px;
+  }
+}

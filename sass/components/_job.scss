@@ -1,0 +1,43 @@
+@media screen and (max-width: 1199px) {
+  .section__job {
+    display: none;
+  }
+}
+.section__heading {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  margin: 0;
+  text-align: center;
+}
+
+.job {
+  margin-top: 50px;
+  display: flex;
+}
+
+.job__item {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.job__thumb {
+  position: relative;
+}
+
+.job__animation {
+  display: flex;
+  font-weight: 700;
+  line-height: 1.14px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  color: $color-white;
+  background: rgba(47, 48, 58, 0.8);
+}

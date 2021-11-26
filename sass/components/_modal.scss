@@ -1,0 +1,202 @@
+.backdrop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  overflow: scroll;
+  transition: $trans-duration $timing-function;
+  @media screen and (max-width: 767px) {
+    padding: 15px;
+  }
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: relative;
+  border-radius: 4px;
+  padding: 40px;
+  background: $color-white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  &-open {
+    overflow: hidden;
+  }
+
+  .is-hidden & {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+
+  @media screen and (min-width: 480px) {
+    width: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform $trans-duration $timing-function;
+  }
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+  }
+}
+
+.form {
+  width: 100%;
+}
+
+.close__icon {
+  .button__close--active:hover & {
+    fill: $color-blue;
+  }
+}
+
+.form__header {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  color: $color-black;
+  margin-bottom: 12px;
+
+  text-align: center;
+  @media screen and (min-width: 1200px) {
+    line-height: 1.15;
+  }
+}
+
+.form__label {
+  display: block;
+  width: 100%;
+  position: relative;
+  &:nth-child(-n + 4) {
+    margin-bottom: 10px;
+  }
+  &:nth-child(5) {
+    margin-bottom: 20px;
+  }
+  &:nth-child(6) {
+    margin-bottom: 30px;
+  }
+}
+
+.label__title {
+  display: block;
+  padding-bottom: 4px;
+  color: $color-gray;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  transition: border $trans-duration $timing-function;
+
+  @media screen and (max-width: 767px) {
+    .form__label:focus-within & {
+      color: $color-blue;
+    }
+  }
+}
+
+.label__input {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  padding-left: 42px;
+  cursor: pointer;
+  transition: border $trans-duration $timing-function;
+
+  .form__label:focus-within & {
+    outline: none;
+    border: 1px solid $color-blue;
+  }
+}
+
+.label__icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  transition: fill $trans-duration $timing-function;
+
+  .form__label:focus-within & {
+    outline: none;
+    fill: $color-blue;
+  }
+}
+
+.comment {
+  display: block;
+  height: 120px;
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+  resize: none;
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.label__flag {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.flag__text {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.03em;
+  color: $color-gray;
+  margin-left: 7px;
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
+
+.document__link {
+  text-decoration: underline;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.03em;
+  color: $color-blue;
+  margin-left: 4px;
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
+
+.flag__icon {
+  margin-bottom: 4px;
+  border: 2px solid #000;
+  fill: $color-white;
+  border-radius: 1px;
+  transition: border-color $trans-duration $timing-function;
+
+  .flag:checked ~ & {
+    border: none;
+    background-color: $color-blue;
+  }
+  .flag:focus ~ & {
+    border-color: $color-blue;
+  }
+}
+
+.flag {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+}
